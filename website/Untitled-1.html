@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>onuuk</title>
+    <link rel="stylesheet" href="style.css">
+    <body style="background-color:#061d33">
+        <audio autoplay id="myaudio">
+            <source src="audio/audio1.mp3" type="audio/mp3">
+        </audio>
+  </head>
+  <body onload="startTime()">
+    <div class="clock2" id="clock"></div>
+
+    <script>
+        var audio = document.getElementById("myaudio");
+        audio.volume = 0.1;
+        function startTime() {
+        const today = new Date();
+        let h = today.getHours();
+        let m = today.getMinutes();
+        let s = today.getSeconds();
+        m = checkTime(m);
+        s = checkTime(s);
+        document.getElementById('clock').innerHTML =  h + ":" + m + ":" + s;
+        setTimeout(startTime, 1000);
+    }
+
+        function checkTime(i) {
+            if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+            return i;
+        }
+    </script>
+    <img src="images/049d0231bcda9942ef9999f223c8a823.jpg" />
+    <p class="username">@onuuk</p>
+    <p>I am currently learning to code.</p>
+    </section>
+    <nav class="links">
+        <a class="github" href="https://github.com/onuuk">Github</a>  
+        <a class="discord" href="https://discord.com/">Discord</a>
+        <a href="https://www.youtube.com/channel/UC0dRoY3rS2mcrfnKgHq4ZcA">Youtube</a>   
+    </nav>
+    <section class="wrapper">
+        <div id="stars"></div>
+        <div id="stars2"></div>
+        <div id="stars3"></div>
+        <div id="title">
+            <span></span>
+            <br>
+            <span></span>
+        </div>
+  </body>
+</html>
